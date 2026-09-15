@@ -1,0 +1,4 @@
+import { ClipboardList } from 'lucide-react'
+import type { Assignment } from '../../features/assignments/assignmentTypes'
+import { AssignmentItem } from '../AssignmentItem/AssignmentItem'
+export const AssignmentList = ({ assignments, onToggle, onDelete }: { assignments: Assignment[]; onToggle: (id: string) => void; onDelete: (id: string) => void }) => assignments.length ? <div className="assignment-list">{assignments.map((assignment) => <AssignmentItem key={assignment.id} assignment={assignment} onToggle={() => onToggle(assignment.id)} onDelete={() => onDelete(assignment.id)} />)}</div> : <div className="empty-state"><ClipboardList size={32} /><h3>Không có bài tập ở đây</h3><p>Thử chọn bộ lọc khác hoặc thêm một bài tập mới.</p></div>
