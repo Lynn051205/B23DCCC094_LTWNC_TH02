@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "1",
+      "subject": "Lập trình Web",
+      "title": "Xây dựng Student Dashboard",
+      "dueDate": "2026-09-19",
+      "priority": "HIGH",
+      "completed": false
+    },
+    {
+      "id": "2",
+      "subject": "Cơ sở dữ liệu",
+      "title": "Thiết kế ERD hệ thống thư viện",
+      "dueDate": "2026-09-23",
+      "priority": "MEDIUM",
+      "completed": false
+    },
+    {
+      "id": "3",
+      "subject": "Tiếng Anh chuyên ngành",
+      "title": "Presentation: Future of AI",
+      "dueDate": "2026-09-15",
+      "priority": "LOW",
+      "completed": true
+    },
+    {
+      "id": "4",
+      "subject": "Lập trình Web",
+      "title": "Ôn tập React Hooks",
+      "dueDate": "2026-09-11",
+      "priority": "HIGH",
+      "completed": false
+    }
+  ]
+}

@@ -11,7 +11,7 @@ const seedAssignments: Assignment[] = [
 
 export const fetchAssignments = createAsyncThunk<Assignment[]>('assignments/fetchAssignments', async () => {
   try {
-    const response = await fetch('https://mocki.io/v1/5b5bfb7e-8fca-4bd7-a44a-9fb7e0dca9ee')
+    const response = await fetch('/assignments.json')
     if (!response.ok) throw new Error('API unavailable')
     const payload = (await response.json()) as ApiResponse<unknown> | unknown
     const data = Array.isArray(payload) ? payload : (payload as ApiResponse<unknown>).data

@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import { fetchAssignments } from './assignmentThunk'
-import type { AssignmentInput, AssignmentState, FilterStatus } from './assignmentTypes'
+import type { Assignment, AssignmentInput, AssignmentState, FilterStatus } from './assignmentTypes'
 
 const initialState: AssignmentState = { assignments: [], loading: false, error: null, filter: 'ALL' }
 
@@ -10,6 +10,9 @@ const assignmentSlice = createSlice({
   reducers: {
     addAssignment: (state, action: PayloadAction<AssignmentInput>) => {
       state.assignments.unshift({ ...action.payload, id: crypto.randomUUID(), completed: false })
+    },
+    replaceAssignments: (state, action: PayloadAction<Assignment[]>) => {
+      state.assignments = action.payload
     },
     deleteAssignment: (state, action: PayloadAction<string>) => {
       state.assignments = state.assignments.filter((assignment) => assignment.id !== action.payload)
@@ -27,5 +30,6 @@ const assignmentSlice = createSlice({
   },
 })
 
-export const { addAssignment, deleteAssignment, toggleComplete, setFilter } = assignmentSlice.actions
-export default assignmentSlice.reducer
+export const { addAssignment, replaceAssignments, deleteAssignment, toggleComplete, setFilter } = assignmentSlice.actions
+export const assignmentReducer = assignmentSlice.reducer
+export default assignmentReducer
